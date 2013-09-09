@@ -1,5 +1,5 @@
-# Put your extension routes here.
-
-map.namespace :admin do |admin|
-  admin.resources :zip_code_ranges
+Spree::Core::Engine.routes.draw do
+  namespace :admin do
+    resouces :zip_code_ranges
+  end
 end
