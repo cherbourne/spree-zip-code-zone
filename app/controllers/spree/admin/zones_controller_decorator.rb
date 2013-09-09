@@ -1,10 +1,10 @@
 Spree::Admin::ZonesController.class_eval do
 
   def load_data
-    @countries = Spree::Country.all.sort
-    @states = Spree::State.all.sort
-    @zip_code_ranges = ZipCodeRange.all.sort
-    @zones = Spree::Zone.all.sort
+    @countries = Spree::Country.order(:name)
+    @states = Spree::State.order(:name)
+    @zones = Spree::Zone.order(:name)
+    @zip_code_ranges = Spree::ZipCodeRange.order(:start_zip)
   end
 
 end
