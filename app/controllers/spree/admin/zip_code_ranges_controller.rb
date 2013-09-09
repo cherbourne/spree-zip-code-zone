@@ -1,4 +1,4 @@
-class Admin::ZipCodeRangesController < Admin::BaseController
+class Spree::Admin::ZipCodeRangesController < Spree::Admin::BaseController
   resource_controller
   layout 'admin'
 

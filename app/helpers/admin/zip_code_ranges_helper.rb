@@ -1,2 +1,0 @@
-module Admin::ZipCodeRangesHelper
-end
