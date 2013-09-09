@@ -1,4 +1,4 @@
-<%= render :partial => 'admin/shared/configuration_menu' %>
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
 <h1><%= t('zip_code_ranges') %></h1>
 
@@ -7,7 +7,7 @@
     <tr>
       <th><%= t('start_zip') %></th>
       <th><%= t('end_zip') %></th>
-      <th><%= t('action') %></th>
+      <th class="actions"></th>
     </tr>
   </thead>
   <tbody>
@@ -16,9 +16,8 @@
         <td><%= range.start_zip %></td>
         <td><%= range.end_zip %></td>
         <td class="actions">
-          <%= link_to_with_icon 'edit', t('edit'), edit_admin_zip_code_range_url(range) %>
-          &nbsp;
-          <%= link_to_with_icon 'delete', t('delete'), object_url(range), :method => :delete %>
+          <%= link_to_edit range, :no_text => true %>
+          <%= link_to_delete range, :no_text => true%>
         </td>
       </tr>
     <% end %>

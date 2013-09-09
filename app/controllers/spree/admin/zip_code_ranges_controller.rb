@@ -1,12 +1,6 @@
-class Spree::Admin::ZipCodeRangesController < Spree::Admin::BaseController
-  resource_controller
-  layout 'admin'
-
-  def index
-    @zip_code_ranges = ZipCodeRange.all
+class Spree::Admin::ZipCodeRangesController < Spree::Admin::ResourceController
+  def collection
+    super.order(:start_zip)
   end
-
-  create.wants.html { redirect_to admin_zip_code_ranges_url }
-  update.wants.html { redirect_to admin_zip_code_ranges_url }
 
 end
