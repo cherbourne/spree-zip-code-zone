@@ -15,4 +15,17 @@ Spree::Zone.class_eval do
     end
   end
 
+  def kind
+    return nil if members.empty? || members.any? { |member| member.try(:zoneable_type).nil? }
+    members.last.zoneable_type.demodulize.underscore
+  end
+
+  private
+
+  def remove_defunct_members
+    zone_members.each do |zone_member|
+      zoneable_kind = 
+      zone_member.destroy if zone_member.zoneable_id.nil? || zone_member.zoneable_type != "spree/#{kind}".camelize
+    end
+  end
 end
