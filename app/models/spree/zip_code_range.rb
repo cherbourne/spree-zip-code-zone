@@ -12,11 +12,7 @@ class Spree::ZipCodeRange < ActiveRecord::Base
   end
 
   def to_s
-    "#{start_zip} - #{end_zip}"
-  end
-
-  def name
-    to_s
+    "#{name} #{start_zip} - #{end_zip}"
   end
 
 end
