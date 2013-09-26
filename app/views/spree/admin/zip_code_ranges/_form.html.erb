@@ -1,3 +1,8 @@
+<%= f.field_container :name do %>
+  <%= f.label :name, t('name') %><br />
+  <%= f.text_field :name, :size => 24 %>
+<% end %>
+
 <%= f.field_container :start_zip do %>
   <%= f.label :start_zip, t('start_zip') %><br />
   <%= f.text_field :start_zip, :size => 12 %>

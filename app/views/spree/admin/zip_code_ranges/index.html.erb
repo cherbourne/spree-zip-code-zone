@@ -5,6 +5,7 @@
 <table class="index">
   <thead>
     <tr>
+      <th><%= t('name') %></th>
       <th><%= t('start_zip') %></th>
       <th><%= t('end_zip') %></th>
       <th class="actions"></th>
@@ -13,6 +14,7 @@
   <tbody>
     <% @zip_code_ranges.each do |range| %>
       <tr>
+        <td><%= range.name %></td>
         <td><%= range.start_zip %></td>
         <td><%= range.end_zip %></td>
         <td class="actions">
