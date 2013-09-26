@@ -15,4 +15,8 @@ class Spree::ZipCodeRange < ActiveRecord::Base
     "#{name} #{start_zip} - #{end_zip}"
   end
 
+  def full_name
+    to_s
+  end
+
 end
