@@ -20,6 +20,14 @@ Spree::Zone.class_eval do
     members.last.zoneable_type.demodulize.underscore
   end
 
+  # Indicates whether the specified zone falls entirely within the zone performing
+  # the check.
+  def contains?(target)
+    return false unless self.kind && target.kind
+    comparable = Spree::ZoneComparable.new self, target
+    comparable.contained?
+  end
+
   private
 
   def remove_defunct_members
@@ -28,4 +36,6 @@ Spree::Zone.class_eval do
       zone_member.destroy if zone_member.zoneable_id.nil? || zone_member.zoneable_type != "spree/#{kind}".camelize
     end
   end
+
 end
+

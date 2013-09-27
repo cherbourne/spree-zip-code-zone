@@ -19,4 +19,12 @@ class Spree::ZipCodeRange < ActiveRecord::Base
     to_s
   end
 
+  def to_range
+    if start_zip =~ /^\d{5}$/ && end_zip =~ /^\d{5}$/
+      (start_zip..end_zip)
+    else
+      raise "Invalid start and end for a range"
+    end
+  end
+
 end

@@ -1,6 +1,7 @@
 module SpreeZipcodeRangeZone
   class Engine < Rails::Engine
     require 'spree/core'
+    require_relative 'spree_zone_comparable'
     isolate_namespace Spree
     engine_name 'spree_zipcode_range_zone'
 
