@@ -5,8 +5,6 @@ class Spree::ZipCodeRange < ActiveRecord::Base
   has_one :zone, :through => :zone_member
   validates_presence_of [:start_zip, :end_zip]
 
-  attr_accessible :start_zip, :end_zip
-
   def <=>(other)
     start_zip <=> other.start_zip and end_zip <=> other.end_zip
   end
