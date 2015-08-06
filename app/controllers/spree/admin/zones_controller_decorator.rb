@@ -1,9 +1,5 @@
 Spree::Admin::ZonesController.class_eval do
 
-  def edit 
-    @zone = Spree::Zone.includes(:zone_members).where(:id => params[:id]).first
-  end
-
   protected
 
   def load_data

@@ -2,14 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  zip_code: "ZIP Code"
-  zip_code_range: "ZIP Code Range"
-  zip_code_ranges: "ZIP Code Ranges"
-  zip_code_range_based: "ZIP Code Range Based"
-  zip_code_ranges_description: "Administer the list of ZIP code ranges"
-  add_zip_code_range: "Add ZIP Code Range"
-  new_zip_code_range: "New ZIP Code Range"
-  editing_zip_code_range: "Editing ZIP Code Range"
-  start_zip: "Starting ZIP"
-  end_zip: "Ending ZIP"
-
+  spree:
+    zip_code: "ZIP Code"
+    zip_code_range: "ZIP Code Range"
+    zip_code_ranges: "ZIP Code Ranges"
+    zip_code_range_based: "ZIP Code Range Based"
+    zip_code_ranges_description: "Administer the list of ZIP code ranges"
+    add_zip_code_range: "Add ZIP Code Range"
+    new_zip_code_range: "New ZIP Code Range"
+    editing_zip_code_range: "Editing ZIP Code Range"
+    start_zip: "Starting ZIP"
+    end_zip: "Ending ZIP"

@@ -1,5 +1,0 @@
-<li class="field">
-  <%= f.hidden_field :zoneable_type, :value => 'Spree::ZipCodeRange' %>
-  <%= f.collection_select(:zoneable_id, @zip_code_ranges, :id, :name, {:include_blank => true}, {:class => 'select2 fullwidth'}) %>
-  <%= remove_nested f %>
-</li>

@@ -15,17 +15,21 @@ Spree::Zone.class_eval do
     end
   end
 
-  def kind
-    return nil if members.empty? || members.any? { |member| member.try(:zoneable_type).nil? }
-    members.last.zoneable_type.demodulize.underscore
+  def zip_code_range_ids
+    if kind == 'zip_code_range'
+      members.pluck(:zoneable_id)
+    else
+      []
+    end
   end
 
-  private
-
-  def remove_defunct_members
-    zone_members.each do |zone_member|
-      zoneable_kind = 
-      zone_member.destroy if zone_member.zoneable_id.nil? || zone_member.zoneable_type != "spree/#{kind}".camelize
+  def zip_code_range_ids=(ids)
+    zone_members.destroy_all
+    ids.reject{ |id| id.blank? }.map do |id|
+      member = Spree::ZoneMember.new
+      member.zoneable_type = 'Spree::ZipCodeRange'
+      member.zoneable_id = id
+      members << member
     end
   end
 end
