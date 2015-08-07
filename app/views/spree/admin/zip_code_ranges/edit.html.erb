@@ -2,9 +2,10 @@
 
 <h1><%= t('editing_zip_code_range') %></h1>
 
+<%= render :partial => 'mws_hack_warning' %>
+
 <%= form_for [:admin, @zip_code_range] do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
   <div class="clear"></div>
   <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
 <% end %>
-

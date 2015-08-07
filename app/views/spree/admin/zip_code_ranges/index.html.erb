@@ -2,6 +2,8 @@
 
 <h1><%= t('zip_code_ranges') %></h1>
 
+<%= render :partial => 'mws_hack_warning' %>
+
 <table class="index">
   <thead>
     <tr>
@@ -30,4 +32,3 @@
 <p>
   <%= button_link_to t('new_zip_code_range'), new_admin_zip_code_range_url, :icon => 'add' %>
 </p>
-
